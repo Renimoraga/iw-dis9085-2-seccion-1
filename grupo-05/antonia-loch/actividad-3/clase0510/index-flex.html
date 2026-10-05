@@ -1,84 +1,121 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Demo flexbox · Componentes para un single page</title>
-  <link rel="stylesheet" href="demo-flex.css">
-</head>
-<body>
+/* =========================================================
+   DEMO FLEXBOX · COMPONENTES PARA UN SINGLE PAGE
+   Navbar, sección en dos columnas, grilla de tarjetas y footer.
+   ========================================================= */
 
-  <!-- ======================================================
-       COMPONENTE 1: NAVBAR
-       Logo a la izquierda, menú a la derecha.
-       ====================================================== -->
-  <header class="encabezado">
-    <p class="logo">Estudio</p>
-    <nav>
-      <ul class="menu">
-        <li><a href="#estudio">Estudio</a></li>
-        <li><a href="#proyectos">Proyectos</a></li>
-        <li><a href="#contacto">Contacto</a></li>
-      </ul>
-    </nav>
-  </header>
+/* ---------- Base ---------- */
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #1f2933;
+  line-height: 1.6;
+}
+h2 {
+  margin: 0 0 1rem;
+  font-size: 2rem;
+  line-height: 1.2;
+}
+img {
+  max-width: 100%;
+}
 
-  <main>
+/* ---------- Componente 1: Navbar ---------- */
+.encabezado {
+  padding: 1rem 2rem;
+  background: #ffffff;
+  border-bottom: 1px solid #d9d2c5;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.logo {
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+.menu {
+  margin: 0;
+  padding: 0;
+  list-style: none;           /* quita las viñetas */
+  display: flex;
+  gap: 1.5rem;
+}
+.menu a {
+  color: #1f2933;
+  font-weight: bold;
+  text-decoration: none;
+}
 
-    <!-- ======================================================
-         COMPONENTE 2: SECCIÓN EN DOS COLUMNAS
-         Texto a un lado, imagen al otro.
-         ====================================================== -->
-    <section id="estudio" class="dos-columnas">
-      <div class="columna">
-        <h2>El estudio</h2>
-        <p>Trabajamos entre la gráfica, el textil y el objeto. Cada proyecto
-           parte en el taller, probando materiales con las manos.</p>
-        <a href="#proyectos" class="boton">Ver proyectos</a>
-      </div>
-      <div class="columna">
-        <img src="img/estudio.jpg" alt="Tela de lino verde con pliegues sobre una mesa de taller">
-      </div>
-    </section>
+/* ---------- Botón (se usa en varios componentes) ---------- */
+.boton {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  background: #2f3c7e;
+  color: #ffffff;
+  font-weight: bold;
+  text-decoration: none;
+}
 
-    <!-- ======================================================
-         COMPONENTE 3: GRILLA DE TARJETAS
-         ====================================================== -->
-    <section id="proyectos" class="seccion">
-      <h2>Proyectos</h2>
-      <!-- div: agrupa las tarjetas solo para darles un layout -->
-      <div class="grilla">
-        <article class="tarjeta">
-          <h3>Afiche</h3>
-          <p>Serie gráfica para un festival de música.</p>
-        </article>
-        <article class="tarjeta">
-          <h3>Textil</h3>
-          <p>Colección de estampados con fibras locales.</p>
-        </article>
-        <article class="tarjeta">
-          <h3>Lámpara</h3>
-          <p>Objeto de madera y papel para interior.</p>
-        </article>
-      </div>
-    </section>
+.boton:hover{
+  background: white;
+  color: blue;
+}
 
-  </main>
+/* ---------- Componente 2: Dos columnas ---------- */
+.dos-columnas {
+  padding: 4rem 2rem;
+  background: #ede6da;
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+}
 
-  <!-- ======================================================
-       COMPONENTE 4: FOOTER EN COLUMNAS
-       ====================================================== -->
-  <footer id="contacto" class="pie">
-    <div>
-      <h2>Contacto</h2>
-      <p><a href="mailto:hola@estudio.cl">hola@estudio.cl</a></p>
-    </div>
-    <div>
-      <h2>Redes</h2>
-      <p><a href="https://www.instagram.com/">Instagram</a></p>
-    </div>
-    <p class="creditos">© 2026 Estudio · Foto: Volha Flaxeco en Unsplash</p>
-  </footer>
+/* ---------- Componente 3: Grilla de tarjetas ---------- */
+.columna {
+  felx: 1;
+}
 
-</body>
-</html>
+
+.seccion {
+  padding: 4rem 2rem;
+}
+.tarjeta {
+  padding: 1.5rem;
+  background: #ffffff;
+  border: 1px solid #d9d2c5;
+  flex: 1;
+}
+.tarjeta h3 {
+  margin: 0 0 0.5rem;
+  font-size: 1.25rem;
+}
+.tarjeta p {
+  margin: 0;
+}
+
+.grilla{
+  display: flex;
+  gap: 2rem;
+  justify-content: space-between;
+}
+.pie {
+  padding: 3rem 2rem;
+  background: #1f2933;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between
+}
+
+.pie div{
+  flex:1;
+}
+.pie h2 {
+  font-size: 1.25rem;
+}
+.pie a {
+  color: #ffffff;
+}
