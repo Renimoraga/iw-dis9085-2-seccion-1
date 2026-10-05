@@ -1,9 +1,11 @@
-# Uso Inteligencia Artificial
+# Bitácora personal
 
-## Actividad 1
+## Uso Inteligencia Artificial
+
+### Actividad 1
 Ninguna
 
-## Actividad 2 
+### Actividad 2 
 Utilicé IA solo para consultarle a cerca de cómo insertar una nueva tipografía, a lo cual me dió esta sugerencia
 1. Buscar en <https://fonts.google.com/> la tipografía seleccionada
 2. Descargarla
@@ -25,3 +27,4 @@ Utilicé IA solo para consultarle a cerca de cómo insertar una nueva tipografí
   font-style: normal;
 }
 ```
+### Actividad 3
